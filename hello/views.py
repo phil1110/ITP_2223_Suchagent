@@ -1,3 +1,4 @@
+from urllib import request
 from django.shortcuts import render
 
 # Create your views here.
@@ -8,6 +9,7 @@ from django.shortcuts import redirect
 from hello.forms import LogMessageForm
 from hello.models import LogMessage
 from django.views.generic import ListView
+from django.utils import simplejson as json
 
 
 class HomeListView(ListView):
@@ -25,6 +27,11 @@ def about(request):
 
 def contact(request):
     return render(request, "hello/contact.html")
+
+
+def result(request):
+
+    return render(request, 'hello/result.html')
 
 
 def log_message(request):
