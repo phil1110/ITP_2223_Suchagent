@@ -20,7 +20,7 @@ class Webscraper:
 
         self.__fillLists(soup)
 
-        self.__writeResults()
+        return self.__writeResults()
 
 
 
@@ -60,6 +60,8 @@ class Webscraper:
 
         cl = cleaner
         cl.run(cl)
+
+        return df.to_json()
 
     def __appendItems(self, name, price, location):
         if not self.products.__contains__(name):
